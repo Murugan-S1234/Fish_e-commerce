@@ -1,0 +1,54 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing:border-box;
+    color:black;
+}
+body{
+    background-image: url(decoration/images.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+div{
+    background-color: rgba(240, 248, 255, 0.418);
+    height: fit-content;
+    width:fit-content;
+    border-radius: 8%;
+    padding: 25px;
+    margin-top: 9rem;
+    color: black;
+    font-size: 150%;
+    text-align:center;
+    border:0.2rem dashed blue;
+    border-radius: 10px;
+}
+#bu{
+    color: black;
+    width: 4rem;
+    font-family:marker;
+    background-color: aqua;
+    border-radius: 4.5px;
+    
+}
+input{
+    height:1.5rem;
+    width:20rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 8px;
+    padding: 5px;
+}
+h1{
+   margin-top: 4rem;
+   font-size: 4rem;
+    
+}
+#f
+{height: fit-content;
+    width:6.5rem;
+    padding:2px;
+}
+#h{
+    border-radius: 8px;
+    padding: 1.5px;
+}
