@@ -1,0 +1,405 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding-top: 35px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 3rem;
+    background-color:rgb(73, 214, 202);
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+}
+
+#logo{
+    position: absolute;
+    height: 3.3rem;
+    top: 0;
+    z-index: 3;
+    position: fixed;
+}
+
+#logo:hover{
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: all 0.5s ease-in;
+}
+
+header img{
+    height: 1.6rem;
+}
+
+header div{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+
+}
+
+.location, .mail{
+    padding: 0.4rem 0 0 1rem;
+}
+
+.location img{
+    height: 1rem;
+    padding: 0 0.2rem;
+}
+
+.mail a{
+    padding: 0.2rem 0 0 0.4rem;
+  
+}
+.location a{
+    padding: 0.4rem 0 0 0.4rem;
+}
+
+
+header input{
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+}
+
+header .input-div{
+    background-color: white;
+    border-radius: 0.1rem;
+    border: 2px solid black;
+    width: 15rem;
+    justify-content: flex-start;
+}
+
+
+input:focus{
+    outline: none;
+}
+
+
+
+.menu{
+    width: 25%;
+    font-size: larger;
+    font-weight: 400;
+}
+
+.menu img{
+    height: 1.2rem;
+    margin: 0.5rem;
+}
+
+.menu div{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.mssg{
+    position: absolute;
+    font-family: fantasy;
+    font-size: larger;
+    left: 6rem;
+    margin-top: 4rem;
+}
+
+.monkey{
+    position: absolute;
+    height:8rem;
+    width: 8rem;
+    left: 14rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.cart{
+    position: absolute;
+    height:4rem;
+    width: 7rem;
+    right: 0%;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.moving-text{
+    font-style:oblique;
+    font-size: 200%;
+    font-weight: 800;
+    background:linear-gradient(to right,rgb(255, 4, 4),orange,rgb(255, 3, 255),rgb(255, 0, 221),blue,yellow,red,orange);
+    background-clip: text;
+    color:transparent;
+}
+
+marquee{
+    width: 40rem;
+    border-radius: 4rem;
+    height: fit-content;
+    margin-top: 2px ;
+}
+
+marquee div{
+    background-color: black;
+    padding: 0 15px;
+    border-radius: 4rem;
+    width: fit-content;
+}
+
+.welcome-text .text{
+    font-style:oblique;
+    font-size: 300%;
+    font-weight: 700;
+    color: aqua;
+    background-color: black;
+    width: fit-content;
+    border-radius: 20px;
+    padding:0 1rem;
+    margin-top: -2px;
+}
+
+hr{
+    margin: auto;
+    margin-top: 2rem;
+}
+#hr-bottom{
+    margin: auto;
+}
+
+
+.static-images{
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    gap: 15px;
+    width: 100%;
+}
+
+.static-image{
+    width: 250px;
+    margin: 10px;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,.1);
+    transition: 1s;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .static-image img{
+    width: 100%;
+ }
+
+.sea-items-text{
+    font-size:4rem;
+    text-shadow: 10px 5px 10px rgb(154, 163, 75);
+    color:black;
+}
+
+.sea-logo{
+    height: 4rem;
+    width: 5rem;
+    box-shadow: 5px 5px 10px  orange;
+    border-radius: 50%;
+    margin: 0.6rem 0 0 1rem;
+    
+}
+
+.sea-item{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#result,#River-items{
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.item{
+    height: 20rem;
+    width: 15rem;
+    margin: 6px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.item img{
+    height:50%;
+}
+
+.item .cost-div{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    font-weight: bolder;
+}
+
+.item button{
+    background-color :aqua;
+    border-radius: 4px;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.item{
+    border-radius: 0.6rem;
+    width: 22%;
+    cursor: pointer;
+}
+.item:hover{
+    box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.329); 
+}
+.NutritionHeading{
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-left: 6rem;
+}
+.NutritionFacts{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.NutritionFacts div{
+    padding-bottom: 2rem;
+}
+.NutritionFacts p{
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer #about,#contact{
+    width: 50%;
+    background-color: aqua;
+    padding: 1rem;
+    padding: 2rem;
+}
+
+#cartItems{
+    position: absolute;
+    width: 30vw;
+    max-height: 100vh;
+    height: fit-content;
+    right: 0;
+    background-color: aqua;
+    z-index: 2;
+    padding: 1rem;
+    padding-bottom: 1rem;
+    position: fixed;
+    display: none;
+    overflow-y: auto;
+    border-radius: 0 0 0 20px;
+}
+
+#cartItems .close{
+    position: absolute;
+    right: 0.7rem;
+    cursor: pointer;
+}
+
+#cartItems h1{
+    margin-top: 0.6rem;
+    display: flex;
+    justify-content: center;
+    font-size: 300;
+    font-family:unset;
+}
+
+.cartItemDiv{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.cartItemDiv img{
+    height:8rem;
+    width: 8rem;
+}
+
+.insertcart{
+display: flex;
+margin: 1rem 1rem 1rem 0.6rem;
+}
+
+.addimg{
+    height: 5rem;
+    width: 6rem;
+    border-radius: 10px;
+}
+
+.insertcart p{
+    margin: auto;
+}
+
+.delLogo{
+    height: 20px;
+    width: 20px;
+    right: 0;
+    cursor: pointer;
+
+}
+
+#prebook{
+    background-color: rgb(22, 216, 216);
+    border-radius: 5px;
+    margin: 0 1rem 0 1rem;
+    padding: 10px;
+}
+
+.note{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.note p{
+    margin-left: 1rem;
+}
+
+.note h2{
+    width:8rem;
+}
+
+form{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+form button{
+    background-color:springgreen;
+    padding: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
