@@ -127,13 +127,20 @@ const result = document.getElementById("result");
 const search = document.getElementById("search");
 const searchIcon = document.getElementById("search-icon");
 const riverItems = document.getElementById("River-items");
-
+const deletetop=document.getElementById("top");
 const cartItems = document.getElementById("cartItems");
+const staticimg=document.querySelectorAll(".static-images");
+
+items.forEach((item, index) => item.id = index);
+RiverItems.forEach((item, index) => item.id = index + items.length);
 
 function itemList(arr, container, i) {
   container.innerHTML = "";
-
-  arr.map((item, index) => {
+    container.style.display = "flex";           // Set display to flex
+    container.style.justifyContent = "center";  // Center content horizontally
+    container.style.alignItems = "center";      // Center content vertically
+    container.style.flexWrap = "wrap";  
+  arr.map((item) => {
     let div = document.createElement("div");
     div.className = "item";
     let img = document.createElement("img");
@@ -152,8 +159,8 @@ function itemList(arr, container, i) {
     costDiv.append(del, cost);
     costDiv.className = "cost-div";
     button.innerHTML = "ADD CART";
-    button.setAttribute("onclick", `handleClick(${index + i})`);
-    button.setAttribute("data-item-id", index + i);
+    button.setAttribute("onclick", `handleClick(${item.id})`);
+    button.setAttribute("data-item-id",item.id);
     button.className = "click";
 
     div.append(img, title, costDiv, button);
@@ -214,6 +221,7 @@ function removeFromCart(n) {
   if (button1.textContent === "ADDED") {
     button1.textContent = "ADD CART";
     button1.style.backgroundColor = "rgb(0, 255, 234)";
+    eleminate.delete(n);
   }
 }
 
@@ -229,22 +237,19 @@ function closecart() {
 
 function handleSearch() {
   let value = search.value;
-  let searchedArray = items.filter((item) => {
-    if (item.name.toLowerCase().includes(value.toLocaleLowerCase())) {
-      return item;
-    }
-  });
-  itemList(searchedArray, result);
+  let searchedArray1 = items.filter((item) =>item.name.toLowerCase().includes(value.toLocaleLowerCase()));
+  let searchedArray2 = RiverItems.filter((item) => item.name.toLowerCase().includes(value.toLocaleLowerCase()));
+  let searchedArray=[...searchedArray1, ...searchedArray2];
+  if(value==""){
+  deletetop.style.display="none";
+  }else{
+    deletetop.style.display="block";
+    itemList(searchedArray,deletetop);
+  }
 }
 
-searchIcon.onclick = () => {
+search.addEventListener("input", () => {
   handleSearch();
-};
-
-search.addEventListener("keypress", (e) => {
-  if (e.key == "Enter") {
-    handleSearch();
-  }
 });
 
 

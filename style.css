@@ -115,8 +115,9 @@ input:focus{
     font-size: larger;
     left: 6rem;
     margin-top: 4rem;
+    color: black;
 }
-
+   
 .monkey{
     position: absolute;
     height:8rem;
@@ -302,6 +303,10 @@ footer #about,#contact{
     background-color: aqua;
     padding: 1rem;
     padding: 2rem;
+}
+
+address{
+font-weight: 900;
 }
 
 #cartItems{
