@@ -248,12 +248,14 @@ hr{
     height:50%;
 }
 
+
 .item .cost-div{
     display: flex;
-    justify-content: space-around;
+    justify-content:space-evenly;
     width: 70%;
     font-weight: bolder;
 }
+
 
 .item button{
     background-color :aqua;
@@ -323,6 +325,7 @@ font-weight: 900;
     display: none;
     overflow-y: auto;
     border-radius: 0 0 0 20px;
+   transition: 0.5s;
 }
 
 #cartItems .close{
@@ -353,6 +356,8 @@ font-weight: 900;
 .insertcart{
 display: flex;
 margin: 1rem 1rem 1rem 0.6rem;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+padding-bottom: 1rem;
 }
 
 .addimg{

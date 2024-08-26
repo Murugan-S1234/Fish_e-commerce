@@ -1,125 +1,125 @@
 const items = [
   {
     image: "./sea/prawn.jfif",
-    name: "Sea Prawn - 1kg",
+    name: "Sea Prawn ",
     oldPrice: "₹700",
-    newPrice: "  ₹500 / pack",
+    newPrice: "  ₹500 /- 1kg",
   },
   {
     image: "./sea/crab.jfif",
-    name: "Sea Crab - 1kg",
+    name: "Sea Crab",
     oldPrice: "₹400",
-    newPrice: "  ₹100 / pack",
+    newPrice: "  ₹100 /- 1kg",
   },
   {
     image: "./sea/thenga para.jfif",
-    name: "Theanga Parai - 1Kg",
+    name: "Theanga Parai",
     oldPrice: "",
-    newPrice: "  ₹200 / pack",
+    newPrice: "  ₹200 /- 1kg",
   },
   {
     image: "./sea/kanava.jfif",
-    name: "Kanava - 1Kg",
+    name: "Kanava",
     oldPrice: "₹800",
-    newPrice: "  ₹600 / pack",
+    newPrice: "  ₹600 /- 1kg",
   },
   {
     image: "./sea/ayala.jfif",
-    name: "Ayala - 1Kg",
+    name: "Ayala",
     oldPrice: "",
-    newPrice: "  ₹120 / pack",
+    newPrice: "  ₹120 /- 1kg",
   },
   {
     image: "./sea/aara.jfif",
-    name: "Sea Eel - 1Kg",
+    name: "Sea Eel",
     oldPrice: "₹350",
-    newPrice: "  ₹250 / pack",
+    newPrice: "  ₹250 /- 1kg",
   },
   {
     image: "./sea/kilichai.jfif",
-    name: "Kilichai - 1Kg",
-    oldPrice: "",
-    newPrice: "  ₹100 / pack",
+    name: "Kilichai",
+    oldPrice: "", 
+    newPrice: "  ₹100 /- 1kg",
   },
   {
     image: "./sea/vanjaram.jfif",
-    name: "Vanjaram - 1Kg",
+    name: "Vanjaram",
     oldPrice: "₹900",
-    newPrice: "  ₹750 / pack",
+    newPrice: "  ₹750 /- 1kg",
   },
   {
     image: "./sea/poplate.jfif",
-    name: "Poplate - 1Kg",
+    name: "Poplate",
     oldPrice: "₹450",
-    newPrice: "  ₹650 / pack",
+    newPrice: "  ₹650 /- 1kg",
   },
   {
     image: "./sea/sangara.jfif",
-    name: "Sangara - 1Kg",
+    name: "Sangara",
     oldPrice: "₹300",
-    newPrice: "  ₹250 / pack",
+    newPrice: "  ₹250 /- 1kg",
   },
   {
     image: "./sea/Kelangan.jfif",
-    name: "Kelangan - 1Kg",
+    name: "Kelangan",
     oldPrice: "₹200",
-    newPrice: "  ₹160 / pack",
+    newPrice: "  ₹160 /- 1kg",
   },
   {
     image: "./sea/kelthi.jfif",
-    name: "Cat Fish - 1Kg",
+    name: "Cat Fish",
     oldPrice: "",
-    newPrice: "  ₹160 / pack",
+    newPrice: "  ₹160 /- 1kg",
   },
 ];
 const RiverItems = [
   {
     image: "./village/Rohu.jfif",
-    name: "Rohu - 1Kg",
+    name: "Rohu",
     oldPrice: "₹200",
-    newPrice: "  ₹160 / pack",
+    newPrice: "  ₹160 /- 1kg",
   },
   {
     image: "./village/Katla.jfif",
-    name: "Katla - 1Kg",
+    name: "Katla",
     oldPrice: "₹160",
-    newPrice: "  ₹150 / pack",
+    newPrice: "  ₹150 /- 1kg",
   },
   {
     image: "./village/Knnadi.jfif",
-    name: "Kannadi Kenda - 1Kg",
+    name: "Kannadi Kenda",
     oldPrice: "₹200",
-    newPrice: "  ₹160 / pack",
+    newPrice: "  ₹160 /- 1kg",
   },
   {
     image: "./village/botla.jfif",
-    name: "Botla Kenda - 1Kg",
+    name: "Botla Kenda",
     oldPrice: "₹200",
-    newPrice: "  ₹170 / pack",
+    newPrice: "  ₹170 /- 1kg",
   },
   {
     image: "./village/jalebi.jfif",
-    name: "Jalebi - 1Kg",
+    name: "Jalebi",
     oldPrice: "₹150",
-    newPrice: "  ₹120 / pack",
+    newPrice: "  ₹120 /- 1kg",
   },
   {
     image: "./village/viral.jfif",
-    name: "Viral  - 1Kg",
+    name: "Viral",
     oldPrice: "₹300",
-    newPrice: "  ₹250 / pack",
+    newPrice: "  ₹250 /- 1kg",
   },
   {
     image: "./village/vawval.png",
-    name: "Vawval - 1Kg",
+    name: "Vawval",
     oldPrice: "₹200",
-    newPrice: "  ₹170 / pack",
+    newPrice: "  ₹170 /- 1kg",
   },
   {
     image: "./village/mirgala.jfif",
-    name: "Mirgala  - 1Kg",
+    name: "Mirgala",
     oldPrice: "₹200",
-    newPrice: "  ₹160 / pack",
+    newPrice: "  ₹160 /- 1kg",
   },
 ];
 
@@ -149,13 +149,16 @@ function itemList(arr, container, i) {
     let cost = document.createElement("p");
     let del = document.createElement("del");
     let button = document.createElement("button");
-
     img.src = item.image;
     title.innerHTML = item.name;
     del.innerHTML = item.oldPrice;
     del.style.color = "red";
+    if(del.innerHTML===""){
+      del.style.display="none";
+    }
     cost.innerHTML = item.newPrice;
     cost.style.color = "green";
+    cost.className="costd"
     costDiv.append(del, cost);
     costDiv.className = "cost-div";
     button.innerHTML = "ADD CART";
@@ -199,12 +202,10 @@ function handleClick(n) {
     div.className = "insertcart";
     div.dataset.itemId = n;
     let title = document.createElement("p");
-    let price = document.createElement("p");
     img.src = indexvalue.image;
     title.innerHTML = indexvalue.name;
-    price.innerHTML = indexvalue.newPrice;
 
-    div.append(img, title, price,logo);
+    div.append(img, title, logo);
 
     cartItems.append(div);
   }
