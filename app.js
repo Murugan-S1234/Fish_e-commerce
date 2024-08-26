@@ -4,72 +4,84 @@ const items = [
     name: "Sea Prawn ",
     oldPrice: "₹700",
     newPrice: "  ₹500 /- 1kg",
+    cost:500
   },
   {
     image: "./sea/crab.jfif",
     name: "Sea Crab",
     oldPrice: "₹400",
     newPrice: "  ₹100 /- 1kg",
+    cost:100
   },
   {
     image: "./sea/thenga para.jfif",
     name: "Theanga Parai",
     oldPrice: "",
     newPrice: "  ₹200 /- 1kg",
+    cost:200
   },
   {
     image: "./sea/kanava.jfif",
     name: "Kanava",
     oldPrice: "₹800",
     newPrice: "  ₹600 /- 1kg",
+    cost:600
   },
   {
     image: "./sea/ayala.jfif",
     name: "Ayala",
     oldPrice: "",
     newPrice: "  ₹120 /- 1kg",
+    cost:120
   },
   {
     image: "./sea/aara.jfif",
     name: "Sea Eel",
     oldPrice: "₹350",
     newPrice: "  ₹250 /- 1kg",
+    cost:250
   },
   {
     image: "./sea/kilichai.jfif",
     name: "Kilichai",
     oldPrice: "", 
     newPrice: "  ₹100 /- 1kg",
+    cost:100
   },
   {
     image: "./sea/vanjaram.jfif",
     name: "Vanjaram",
     oldPrice: "₹900",
     newPrice: "  ₹750 /- 1kg",
+    cost:750
   },
   {
     image: "./sea/poplate.jfif",
     name: "Poplate",
     oldPrice: "₹450",
     newPrice: "  ₹650 /- 1kg",
+    cost:650
   },
   {
     image: "./sea/sangara.jfif",
     name: "Sangara",
     oldPrice: "₹300",
     newPrice: "  ₹250 /- 1kg",
+    cost:250
   },
   {
     image: "./sea/Kelangan.jfif",
     name: "Kelangan",
     oldPrice: "₹200",
     newPrice: "  ₹160 /- 1kg",
+    cost:160
   },
   {
     image: "./sea/kelthi.jfif",
     name: "Cat Fish",
     oldPrice: "",
     newPrice: "  ₹160 /- 1kg",
+    cost:160
   },
 ];
 const RiverItems = [
@@ -78,50 +90,60 @@ const RiverItems = [
     name: "Rohu",
     oldPrice: "₹200",
     newPrice: "  ₹160 /- 1kg",
+    cost:160
   },
   {
     image: "./village/Katla.jfif",
     name: "Katla",
     oldPrice: "₹160",
     newPrice: "  ₹150 /- 1kg",
+    cost:150
   },
   {
     image: "./village/Knnadi.jfif",
     name: "Kannadi Kenda",
     oldPrice: "₹200",
     newPrice: "  ₹160 /- 1kg",
+    cost:160
   },
   {
     image: "./village/botla.jfif",
     name: "Botla Kenda",
     oldPrice: "₹200",
     newPrice: "  ₹170 /- 1kg",
+    cost:170
   },
   {
     image: "./village/jalebi.jfif",
     name: "Jalebi",
     oldPrice: "₹150",
     newPrice: "  ₹120 /- 1kg",
+    cost:120
   },
   {
     image: "./village/viral.jfif",
     name: "Viral",
     oldPrice: "₹300",
     newPrice: "  ₹250 /- 1kg",
+    cost:250
   },
   {
     image: "./village/vawval.png",
     name: "Vawval",
     oldPrice: "₹200",
     newPrice: "  ₹170 /- 1kg",
+    cost:170
   },
   {
     image: "./village/mirgala.jfif",
     name: "Mirgala",
     oldPrice: "₹200",
     newPrice: "  ₹160 /- 1kg",
+    cost:160
   },
 ];
+
+const proprice=[500,100,200,600,120,250,100,750,650,250,160,160,160,150,160,170,120,250,170,160];
 
 const result = document.getElementById("result");
 const search = document.getElementById("search");
@@ -131,16 +153,17 @@ const deletetop=document.getElementById("top");
 const cartItems = document.getElementById("cartItems");
 const staticimg=document.querySelectorAll(".static-images");
 
+
 items.forEach((item, index) => item.id = index);
 RiverItems.forEach((item, index) => item.id = index + items.length);
 
-function itemList(arr, container, i) {
+function itemList(arr, container) {
   container.innerHTML = "";
     container.style.display = "flex";           // Set display to flex
     container.style.justifyContent = "center";  // Center content horizontally
     container.style.alignItems = "center";      // Center content vertically
     container.style.flexWrap = "wrap";  
-  arr.map((item) => {
+    arr.map((item) => {
     let div = document.createElement("div");
     div.className = "item";
     let img = document.createElement("img");
@@ -171,11 +194,12 @@ function itemList(arr, container, i) {
   });
 }
 
-itemList(items, result, 0);
-itemList(RiverItems, riverItems, 12);
+itemList(items, result);
+itemList(RiverItems, riverItems);
 
 const eleminate = new Set();
-
+let inp=document.querySelector('.inp');
+let price=0;
 function handleClick(n) {
   var parentElement = event.target.parentElement;
   var button = parentElement.querySelector(".click");
@@ -193,8 +217,18 @@ function handleClick(n) {
   if (!eleminate.has(n)) {
     const indexvalue = n < 12 ? items[n] : RiverItems[n - 12];
     let div = document.createElement("div");
+    let quantity = document.createElement("div");
     let img = document.createElement("img");
     let logo = document.createElement("img");
+    let input=document.createElement("input");
+    let quan = document.createElement("p");
+    input.setAttribute("type","number");
+    input.setAttribute("min", "1");
+    input.setAttribute("max", "10");
+    input.setAttribute("step","0.5");
+    input.setAttribute("onclick",`addprice(${n})`)
+    input.className="weight";
+    input.value=1;
     logo.src="logos/delete.png";
     logo.className='delLogo'
     logo.setAttribute("onclick",`removeFromCart(${n})`);
@@ -203,14 +237,37 @@ function handleClick(n) {
     div.dataset.itemId = n;
     let title = document.createElement("p");
     img.src = indexvalue.image;
-    title.innerHTML = indexvalue.name;
-
-    div.append(img, title, logo);
-
+    let pricename="Rs. "+indexvalue.cost;
+    title.innerHTML = `<span class="name">${indexvalue.name}</span><span class="price">${pricename}</span>`;
+    quan.innerHTML="Quantity :"
+    quantity.append(quan,input);
+    quantity.className="quandiv";
+    div.append(img, title, logo,quantity);
     cartItems.append(div);
+    price+=indexvalue.cost
+    inp.value=price;
   }
   eleminate.add(n);
 }
+
+function addprice(n){
+  var parentElement = event.target.parentElement;
+  var button = parentElement.querySelector(".weight");
+  let getvalue=(n<12 ? items[n].cost : RiverItems[n-items.length].cost)
+  let totalproductprice=button.value*getvalue;
+  if(totalproductprice>proprice[n]){
+    proprice[n]=totalproductprice;
+  }else{
+    let temp=totalproductprice-proprice[n];
+    proprice[n]+=temp;
+  }
+  price=0;
+  eleminate.forEach((index)=>{
+  price+=proprice[index];
+  })
+  inp.value=price;
+}
+
 function removeFromCart(n) {
   const cartItemDivs = cartItems.querySelectorAll(".insertcart");
   cartItemDivs.forEach((div) => {
@@ -224,6 +281,8 @@ function removeFromCart(n) {
     button1.style.backgroundColor = "rgb(0, 255, 234)";
     eleminate.delete(n);
   }
+  price-=proprice[n];
+  inp.value=price;
 }
 
 function opencart() {
