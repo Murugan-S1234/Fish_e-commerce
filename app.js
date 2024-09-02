@@ -226,7 +226,7 @@ function handleClick(n) {
     input.setAttribute("min", "1");
     input.setAttribute("max", "10");
     input.setAttribute("step","0.5");
-    input.setAttribute("onclick",`addprice(${n})`)
+    input.setAttribute("oninput",`addprice(${n})`)
     input.className="weight";
     input.value=1;
     logo.src="logos/delete.png";

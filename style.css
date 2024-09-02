@@ -57,15 +57,15 @@ header div{
 }
 
 .location img{
-    height: 1rem;
-    padding: 0 0.2rem;
+    height: 1.5rem;
+    padding: 0.4rem 0 0.1rem 0.5rem;
 }
 
 .mail a{
     padding: 0.2rem 0 0 0.4rem;
   
 }
-.location a{
+.location h4{
     padding: 0.4rem 0 0 0.4rem;
 }
 
@@ -230,6 +230,10 @@ hr{
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+}
+
+#River-items img{
+    max-width:18rem;
 }
 
 
@@ -480,3 +484,58 @@ form button{
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* General styles for mobile devices */
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: 16px;
+      margin-top: 0.8rem;
+      width: 100%;
+    }
+  
+    /* .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 3rem;
+        background-color:rgb(73, 214, 202);
+        color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    } */
+    header{
+    width: 100%;
+    }
+
+    #logo{
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+
+    header .location h4{
+        display: none;
+    }
+    header .mail{
+        display: none;
+    }
+
+    .location img{
+        height: 2.5rem;
+        padding: 0.1rem 0 0.2rem 0.5rem;
+    }
+
+    header .menu{
+        display: none;
+      
+    }
+    header .input-div{
+        background-color: white;
+        border-radius: 0.1rem;
+        border: 2px solid black;
+        left: 0;
+    }
+  }
+  
