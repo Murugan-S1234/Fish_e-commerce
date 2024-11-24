@@ -321,7 +321,7 @@ font-weight: 900;
     max-height: 100vh;
     height: fit-content;
     right: 0; 
-    background-color: aqua;
+    background-color:rgb(73, 214, 202);
     z-index: 2;
     padding: 1rem;
     position: fixed;
