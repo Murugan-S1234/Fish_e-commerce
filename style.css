@@ -199,6 +199,17 @@ hr{
     align-items: center;
  }
 
+ .static-image1{
+    width: 250px;
+    margin: 10px;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,.1);
+    transition: 1s;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
  .static-image img{
     width: 100%;
  }
@@ -239,13 +250,17 @@ hr{
 
 .item{
     height: 20rem;
-    width: 15rem;
+    width: 22%;
     margin: 6px;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+   overflow: hidden;
+   border-radius: 0.6rem;
+    width: 22%;
+    cursor: pointer;
 }
 
 .item img{
@@ -268,36 +283,166 @@ hr{
     cursor: pointer;
 }
 
-.item{
-    border-radius: 0.6rem;
-    width: 22%;
-    cursor: pointer;
-}
+
 .item:hover{
     box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.329); 
 }
+
+@media (max-width: 768px) {
+    .item {
+        width: 47%; /* Adjust the width for mobile */
+        margin: 10px auto; /* Center-align items with margin */
+    }
+    
+    .item img {
+        max-height: 40%; /* Reduce image height for smaller screens */
+    }
+    
+    .item .cost-div {
+      /* Stack cost details */
+        align-items: center; /* Center-align text */
+        width: 60%;
+    }
+
+    
+    .mail a{
+        display: none;
+    }
+    .location h4{
+        display: none;
+    }
+
+    .menu{
+        display: none;
+    }
+    
+    header{
+        height: 3rem;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    #logo{
+        height:5rem;
+    }
+    marquee{
+        max-width: 52%;
+        margin-top: 0.9rem;
+    }
+
+    .location img,.mail img{
+        height: 2.5rem;
+        padding: 0.2rem 0 0.2rem 0.5rem;
+    }
+
+    .welcome-text .text{
+        font-size: 200%;
+        font-weight: 350;
+        border-radius: 0.5rem;
+    }
+    .cart{
+        right: 1.1%;
+        margin-top: 2.8rem;
+    }
+
+hr{
+    margin-top: 9.5rem;
+}
+    .mssg{
+        left: 7rem;
+        margin-top: 8rem;
+    }
+       
+    .monkey{
+        left: 17rem;
+        margin-top: 6rem;
+    }
+    
+    .static-image1{
+        display: none;
+    }
+
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .note h2{
+        display: none;
+    }
+
+form label{
+font-size: 1.8rem;
+width: 11rem;
+display: inline-block;
+}
+
+form input,form select{
+    height: 1.7rem;
+    border-radius: 8px;
+}
+
+.otp{
+    margin-left: 11rem;
+}
+
+form button{
+    margin-left: 20px;
+    border-radius: 2px;
+}
+
+.note p{
+    font-size: 1.3rem;
+}
+
+form{
+    row-gap: 10px;
+}
+
+.ot{
+    margin-left: 24px;
+}
+
+
+.cont {
+    width: 50%; /* Two items per row */
+    margin-bottom: 3%; 
+    padding-left: 0;
+}
+
+}
+
+
+
+.NutritionFacts {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Wraps items to the next row */
+    justify-content:space-evenly; /* Evenly spaces items horizontally */
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding-left: 8rem;
+}
+
+/* Individual Content Blocks */
+.cont {
+    width: 25%; /* Suitable for desktop, allowing up to four items per row */
+    margin-bottom: 1%; /* Adds spacing between rows */
+
+}
+
+
+
 .NutritionHeading{
     margin-top: 10px;
     font-size: 2rem;
     font-weight: 400;
     margin-left: 6rem;
 }
-.NutritionFacts{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-}
 
-.NutritionFacts div{
-    padding-bottom: 2rem;
-}
-.NutritionFacts p{
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 300;
-}
 
 footer{
     display: flex;
@@ -321,13 +466,14 @@ font-weight: 900;
     max-height: 100vh;
     height: fit-content;
     right: 0; 
-    background-color: aqua;
+    background-color: rgb(73, 214, 202);
     z-index: 2;
     padding: 1rem;
     position: fixed;
     display: none;
     overflow-y: auto;
     border-radius: 0 0 0 20px;
+    border-top: 1px solid rgb(167, 211, 240);
 }
 
 #cartItems .close{
@@ -484,58 +630,3 @@ form button{
     border-radius: 4px;
     cursor: pointer;
 }
-
-/* General styles for mobile devices */
-@media only screen and (max-width: 600px) {
-    body {
-      font-size: 16px;
-      margin-top: 0.8rem;
-      width: 100%;
-    }
-  
-    /* .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0rem 3rem;
-        background-color:rgb(73, 214, 202);
-        color: black;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 2;
-    } */
-    header{
-    width: 100%;
-    }
-
-    #logo{
-        height: 4.5rem;
-        width: 4.5rem;
-    }
-
-    header .location h4{
-        display: none;
-    }
-    header .mail{
-        display: none;
-    }
-
-    .location img{
-        height: 2.5rem;
-        padding: 0.1rem 0 0.2rem 0.5rem;
-    }
-
-    header .menu{
-        display: none;
-      
-    }
-    header .input-div{
-        background-color: white;
-        border-radius: 0.1rem;
-        border: 2px solid black;
-        left: 0;
-    }
-  }
-  

@@ -313,6 +313,126 @@ search.addEventListener("input", () => {
 });
 
 
+const nutritionData = [
+  {
+    name: "Prawn (Shrimp)",
+    facts: {
+      Calories: "106 kcal",
+      Protein: "20.3 g",
+      Fat: "1.7 g",
+      Calcium: "43 mg",
+      "Vitamin D": "153 IU",
+      "Vitamin B12": "1.7 µg"
+    }
+  },
+  {
+    name: "Crab",
+    facts: {
+      Calories: "83 kcal",
+      Protein: "17.5 g",
+      Fat: "1.1 g",
+      Calcium: "118 mg",
+      "Vitamin D": "200 IU",
+      "Vitamin B12": "9.8 µg"
+    }
+  },
+  {
+    name: "Poplate (Pomfret)",
+    facts: {
+      Calories: "83 kcal",
+      Protein: "17.5 g",
+      Fat: "1.1 g",
+      Calcium: "118 mg",
+      "Vitamin D": "200 IU",
+      "Vitamin B12": "9.8 µg"
+    }
+  },
+  {
+    name: "Vanjaram (King Fish)",
+    facts: {
+      Calories: "105 kcal",
+      Protein: "20 g",
+      Fat: "2 g",
+      Calcium: "5 mg",
+      "Vitamin D": "340 IU",
+      "Vitamin B12": "6 µg"
+    }
+  },
+  {
+    name: "Sangara (Snapper)",
+    facts: {
+      Calories: "110 kcal",
+      Protein: "22 g",
+      Fat: "1.6 g",
+      Calcium: "5 mg",
+      "Vitamin D": "230 IU",
+      "Vitamin B12": "1.3 µg"
+    }
+  },
+  {
+    name: "Rohu",
+    facts: {
+      Calories: "97 kcal",
+      Protein: "17.6 g",
+      Fat: "2.9 g",
+      Calcium: "10 mg",
+      "Vitamin D": "600 IU",
+      "Vitamin B12": "2.8 µg"
+    }
+  },
+  {
+    name: "Katla",
+    facts: {
+      Calories: "97 kcal",
+      Protein: "17.4 g",
+      Fat: "2.9 g",
+      Calcium: "13 mg",
+      "Vitamin D": "200 IU",
+      "Vitamin B12": "2.7 µg"
+    }
+  },
+  {
+    name: "Viral",
+    facts: {
+      Calories: "113 kcal",
+      Protein: "20.9 g",
+      Fat: "2.2 g",
+      Calcium: "24 mg",
+      "Vitamin D": "135 IU",
+      "Vitamin B12": "3.4 µg"
+    }
+  }
+];
+
+// Select the container element
+const container = document.querySelector(".NutritionFacts");
+
+// Iterate through the nutritionData array
+nutritionData.forEach(item => {
+  // Create a div element for each item and set its class
+  const div = document.createElement("div");
+  div.className = "cont";
+
+  // Add the item name as a paragraph
+  const p = document.createElement("p");
+  p.textContent = item.name; // Set the text content to the item's name
+  div.appendChild(p);
+
+  // Create an unordered list for the item's facts
+  const ul = document.createElement("ul");
+  Object.entries(item.facts).forEach(([key, value]) => {
+    const li = document.createElement("li");
+    li.textContent = `${key}: ${value}`; // Add key-value pairs as list items
+    ul.appendChild(li);
+  });
+
+  // Append the list to the div
+  div.appendChild(ul);
+
+  // Append the div to the container
+  container.appendChild(div);
+});
+
 
 
 
