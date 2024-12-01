@@ -299,7 +299,6 @@ hr{
     .item {
         width: 46%; /* Adjust the width for mobile */
         height: 15rem;
-        background-color: black;
        /* Center-align items with margin */
     }
 
