@@ -379,28 +379,6 @@ const nutritionData = [
       "Vitamin D": "600 IU",
       "Vitamin B12": "2.8 µg"
     }
-  },
-  {
-    name: "Katla",
-    facts: {
-      Calories: "97 kcal",
-      Protein: "17.4 g",
-      Fat: "2.9 g",
-      Calcium: "13 mg",
-      "Vitamin D": "200 IU",
-      "Vitamin B12": "2.7 µg"
-    }
-  },
-  {
-    name: "Viral",
-    facts: {
-      Calories: "113 kcal",
-      Protein: "20.9 g",
-      Fat: "2.2 g",
-      Calcium: "24 mg",
-      "Vitamin D": "135 IU",
-      "Vitamin B12": "3.4 µg"
-    }
   }
 ];
 
