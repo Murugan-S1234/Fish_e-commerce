@@ -33,13 +33,9 @@ header a{
     top: 0;
     z-index: 3;
     position: fixed;
+    animation: rotate 5s linear infinite;
 }
 
-#logo:hover{
-    cursor: pointer;
-    transform: rotate(360deg);
-    transition: all 0.5s ease-in;
-}
 
 header img{
     height: 1.6rem;
@@ -231,13 +227,35 @@ hr{
     box-shadow: 5px 5px 10px  orange;
     border-radius: 50%;
     margin: 0.6rem 0 0 1rem;
-    
+animation: rotate3d 5s linear infinite;
+transform-origin: center;
+}
+
+@keyframes rotate3d{
+    0%{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    50%{
+        transform: rotateX(360deg) rotateY(180deg);
+    }
+    100%{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 .sea-item{
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  perspective: 1000px;
 }
 
 #result,#River-items{
@@ -280,18 +298,55 @@ hr{
 }
 
 
+
 .item button{
-    background-color :aqua;
+    background: #ffc401; /* Solid golden color */
+    color: white;
+    border: 2px solid #d4af37;
     border-radius: 4px;
     padding: 2px 4px;
     cursor: pointer;
+    position: relative;
+  overflow: hidden;
+  outline: none;
+}
+.item button::before {
+    content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, hwb(180 97% 2% / 0.753) 5%, transparent 50%); /* Silver wave */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: waveEffect 2s infinite; /* Continuous wave animation */
+  opacity: 0.6;
+  }
+
+  @keyframes waveEffect {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.3;
+  }
+  50% {
+    width: 300%;
+    height: 300%;
+    opacity: 0.9;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
 }
 
+  
 
 .item:hover{
-    box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.329); 
+    box-shadow:0 0 10px 1px rgba(0, 0, 0, 0.111); 
 }
-
 
 
 
@@ -342,9 +397,9 @@ hr{
     }
 
 
-    .mail img,.location img{
+    .mail img{
         margin: 0;
-        padding: 0;
+        padding-right: 20px;
     }
     .location img{
         margin: 0px 0px 0px 16px;
@@ -365,21 +420,25 @@ hr{
 
 
     .welcome-text .text{
-        font-size:1.5rem;
-        font-weight: 200;
+        font-size:1.3rem;
+        font-weight:150;
         border-radius: 0.5rem;
+        background-color: rgb(245, 31, 102);
     }
+
     .cart{
         right: 0;
-        margin-top: 3.2rem;
+        margin-top: 4rem;
     }
 
 hr{
     margin-top: 9.5rem;
 }
     .mssg{
-       width: 50%;
+       width: 70%;
        text-align: center;
+       text-align: end;
+       margin-top: 1.5rem;
     }
        
     .monkey{
@@ -393,6 +452,18 @@ hr{
     .static-image1{
         display: none;
     }
+
+    .static-images{
+        padding: 0.5rem;
+        gap: 4px;
+        width: 100%;
+    }
+    
+    .static-image{
+        width: 250px;
+        margin: 6px;
+     }
+    
 
     
     form{
@@ -418,7 +489,7 @@ hr{
         width:7% ;
         box-shadow: 5px 5px 10px  orange;
         border-radius: 50%;
-      margin-top: 0;
+      margin-top: 7px;
         
     }
 
@@ -472,19 +543,116 @@ form{
     
 }
 
-
+#cartItems{
+    width: 80vw !important;
+overflow-x: hidden;
+margin-top: 0.750rem;
 }
 
 
+#cartItems .close{
+    position: absolute;
+    right: 0 !important;
+    cursor: pointer;
+    height: 2rem;
+    margin-top: -1rem;
+}
+
+#cartItems h1{
+    font-size: 1.7rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.total{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+    bottom: 1rem;
+    padding: 10px 0 20px 20px;
+    row-gap: 10px;
+}
+
+
+.cartItemDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cartItemDiv img{
+    height:8rem;
+    width: 8rem;
+}
+
+.insertcart{
+display: flex;
+margin: 1rem 1rem 1rem 0.6rem;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+padding-bottom: 1rem;
+position: relative;
+}
+
+.addimg{
+    height: 5rem;
+    width: 6rem;
+    border-radius: 10px;
+}
+
+.insertcart p{
+    margin: auto;
+}
+
+
+.quandiv{
+display: flex;
+align-items: center;
+gap: 20px;
+bottom: 10px;
+position: absolute;
+left:7.5rem;
+}
+
+.quandiv input{
+    width: 3rem;
+    text-align: center;
+}
+
+.price{
+    right: 3rem;
+    position: absolute;
+}
+
+.name{
+    position: absolute;
+    left: 7.5rem;
+}
+
+.delLogo{
+    height: 20px;
+    width: 20px;
+    right: 1rem;
+    cursor: pointer;
+    position: absolute;
+}
+
+}/*----------------------------------------------------------------------------------------------------*/
+
+#cartItems * {
+    max-width: 100%; /* Child elements will not overflow */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    word-wrap: break-word; /* Ensures text doesn't overflow */
+}
 
 .NutritionFacts {
-    width: 98%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap; /* Wraps items to the next row */
-    justify-content:space-evenly; /* Evenly spaces items horizontally */
+    justify-content:space-around; /* Evenly spaces items horizontally */
     margin-top: 1rem;
     font-size: 1.2rem;
-    
+    margin-left: 0px;
 }
 
 /* Individual Content Blocks */
@@ -507,12 +675,12 @@ form{
 footer{
     display: flex;
     justify-content: space-evenly;
+    background-color: aqua;
     width: 100%;
 }
 
 footer #about,#contact{
-    width: 47%;
-    background-color: aqua;
+    width: 50%;
    padding: 6px;
    overflow: auto;
 }
@@ -521,20 +689,20 @@ address{
 font-weight: 200;
 }
 
-#cartItems{
-    position: absolute;
-    width: 30vw;
+#cartItems {
+    position: fixed;
+    width: 30vw; /* Default width for larger screens */
     max-height: 100vh;
     height: fit-content;
     right: 0; 
     background-color: rgb(73, 214, 202);
     z-index: 2;
     padding: 1rem;
-    position: fixed;
     display: none;
-    overflow-y: auto;
+    overflow-y: auto; /* Allow vertical scrolling for overflow content */
     border-radius: 0 0 0 20px;
     border-top: 1px solid rgb(167, 211, 240);
+    box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 #cartItems .close{
@@ -661,6 +829,7 @@ left:7.5rem;
 .note h2{
     width:8rem;
 }
+
 
 form{
     display: flex;

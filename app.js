@@ -205,11 +205,10 @@ function handleClick(n) {
   var button = parentElement.querySelector(".click");
   if (button.textContent === "ADD CART") {
     button.textContent = "ADDED";
-    button.style.backgroundColor = "rgb(144, 238, 144)";
+    button.style.backgroundColor = "green";
   } else {
     button.textContent = "ADD CART";
-    button.style.backgroundColor = "rgb(0, 255, 234)";
-
+    button.style.backgroundColor = " #ffc401";
     removeFromCart(n);
     eleminate.delete(n);
      return;
@@ -278,7 +277,7 @@ function removeFromCart(n) {
   let button1 = document.querySelector(`.click[data-item-id='${n}']`);
   if (button1.textContent === "ADDED") {
     button1.textContent = "ADD CART";
-    button1.style.backgroundColor = "rgb(0, 255, 234)";
+    button1.style.backgroundColor = " #ffc401";
     eleminate.delete(n);
   }
   price-=proprice[n];
@@ -378,6 +377,28 @@ const nutritionData = [
       Calcium: "10 mg",
       "Vitamin D": "600 IU",
       "Vitamin B12": "2.8 µg"
+    }
+  },
+  {
+    name: "Katla",
+    facts: {
+      Calories: "97 kcal",
+      Protein: "17.4 g",
+      Fat: "2.9 g",
+      Calcium: "13 mg",
+      "Vitamin D": "200 IU",
+      "Vitamin B12": "2.7 µg"
+    }
+  },
+  {
+    name: "Viral",
+    facts: {
+      Calories: "113 kcal",
+      Protein: "20.9 g",
+      Fat: "2.2 g",
+      Calcium: "24 mg",
+      "Vitamin D": "135 IU",
+      "Vitamin B12": "3.4 µg"
     }
   }
 ];
